@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Chrome } from "lucide-react";
 import logo from "@/assets/logo.svg";
 
+const CHECKOUT_URL = "https://getviralvault.lemonsqueezy.com/checkout/buy/f712138b-c5c4-4af0-8118-09695cac1655";
+
 const Hero = () => {
   return (
     <section className="min-h-[90vh] flex items-center justify-center px-4 py-20">
@@ -26,11 +28,19 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
-            <Button size="lg" className="group">
+            <Button 
+              size="lg" 
+              className="group"
+              onClick={() => window.open(CHECKOUT_URL, '_blank')}
+            >
               <Chrome className="mr-2 h-5 w-5" />
-              Add to Chrome
+              Get Viral Vault Now
             </Button>
-            <Button size="lg" variant="outline">
+            <Button 
+              size="lg" 
+              variant="outline"
+              onClick={() => document.getElementById('video-demo')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Watch Demo
             </Button>
           </div>

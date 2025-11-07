@@ -1,9 +1,8 @@
 import { Card } from "@/components/ui/card";
-import { Play } from "lucide-react";
 
 const VideoDemo = () => {
   return (
-    <section className="py-24 px-4">
+    <section id="video-demo" className="py-24 px-4">
       <div className="container max-w-5xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-black mb-4">

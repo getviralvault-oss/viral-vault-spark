@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Check, Zap } from "lucide-react";
+import TrustBadges from "./TrustBadges";
+
+const CHECKOUT_URL = "https://getviralvault.lemonsqueezy.com/checkout/buy/f712138b-c5c4-4af0-8118-09695cac1655";
 
 const features = [
   "Unlimited profile sorting",
@@ -52,13 +55,17 @@ const Pricing = () => {
               ))}
             </div>
             
-            <Button size="lg" className="w-full text-lg py-6">
+            <Button 
+              size="lg" 
+              className="w-full text-lg py-6"
+              onClick={() => window.open(CHECKOUT_URL, '_blank')}
+            >
               Get Viral Vault Now
             </Button>
             
-            <p className="text-center text-sm text-muted-foreground mt-6">
-              Instant access after purchase
-            </p>
+            <div className="mt-8 pt-8 border-t">
+              <TrustBadges />
+            </div>
           </div>
         </Card>
       </div>

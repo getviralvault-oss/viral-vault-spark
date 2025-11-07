@@ -3,6 +3,7 @@ import HowItWorks from "@/components/HowItWorks";
 import VideoDemo from "@/components/VideoDemo";
 import FAQ from "@/components/FAQ";
 import Pricing from "@/components/Pricing";
+import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -13,6 +14,7 @@ const Index = () => {
       <VideoDemo />
       <FAQ />
       <Pricing />
+      <FinalCTA />
       <Footer />
     </div>
   );
