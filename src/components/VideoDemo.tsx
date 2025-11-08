@@ -2,13 +2,13 @@ import { Card } from "@/components/ui/card";
 
 const VideoDemo = () => {
   return (
-    <section id="video-demo" className="py-24 px-4">
+    <section id="video-demo" className="py-12 md:py-24 px-4">
       <div className="container max-w-5xl">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-black mb-4">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-3 md:mb-4">
             See It In Action
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-lg md:text-xl text-muted-foreground px-4">
             Watch how Viral Vault helps you discover viral content
           </p>
         </div>

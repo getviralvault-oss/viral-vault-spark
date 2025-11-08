@@ -24,37 +24,37 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <section className="py-24 px-4 bg-card">
+    <section className="py-12 md:py-24 px-4 bg-card">
       <div className="container max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black mb-4">
+        <div className="text-center mb-8 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-3 md:mb-4">
             How Viral Vault Works
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-lg md:text-xl text-muted-foreground px-4">
             Simple setup, powerful insights in just 3 steps
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
           {steps.map((step) => {
             const Icon = step.icon;
             return (
               <Card
                 key={step.number}
-                className="relative p-8 border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-lg"
+                className="relative p-6 md:p-8 border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-lg"
               >
-                <div className="absolute -top-4 -left-4 w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold">
+                <div className="absolute -top-3 -left-3 w-10 h-10 md:w-12 md:h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-lg md:text-xl font-bold">
                   {step.number}
                 </div>
                 
-                <div className="mb-6 mt-4">
-                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
-                    <Icon className="w-8 h-8 text-primary" />
+                <div className="mb-4 md:mb-6 mt-3 md:mt-4">
+                  <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
+                    <Icon className="w-7 h-7 md:w-8 md:h-8 text-primary" />
                   </div>
                 </div>
                 
-                <h3 className="text-2xl font-bold mb-3">{step.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3">{step.title}</h3>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                   {step.description}
                 </p>
               </Card>

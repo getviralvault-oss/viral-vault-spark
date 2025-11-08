@@ -40,28 +40,28 @@ const faqs = [
 
 const FAQ = () => {
   return (
-    <section className="py-24 px-4">
+    <section className="py-12 md:py-24 px-4">
       <div className="container max-w-3xl">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-black mb-4">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-3 md:mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-lg md:text-xl text-muted-foreground px-4">
             Everything you need to know about Viral Vault
           </p>
         </div>
 
-        <Accordion type="single" collapsible className="space-y-4">
+        <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
           {faqs.map((faq, index) => (
             <AccordionItem
               key={index}
               value={`item-${index}`}
-              className="border-2 rounded-lg px-6 data-[state=open]:border-primary/50 transition-colors"
+              className="border-2 rounded-lg px-4 md:px-6 data-[state=open]:border-primary/50 transition-colors"
             >
-              <AccordionTrigger className="text-left text-lg font-bold hover:no-underline py-6">
+              <AccordionTrigger className="text-left text-base md:text-lg font-bold hover:no-underline py-4 md:py-6">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
+              <AccordionContent className="text-sm md:text-base text-muted-foreground leading-relaxed pb-4 md:pb-6">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
