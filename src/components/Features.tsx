@@ -6,17 +6,23 @@ const Features = () => {
     {
       icon: <Filter className="w-6 h-6" />,
       title: "Smart Sorting",
-      description: "Sort through thousands of reels instantly to find your best performers"
+      description: "Sort through thousands of reels instantly to find your best performers",
+      image: null, // Will be added when screenshot is uploaded
+      alt: "Smart sorting feature interface"
     },
     {
       icon: <BarChart3 className="w-6 h-6" />,
       title: "Detailed Analytics",
-      description: "Get comprehensive stats on views, likes, comments, and engagement rates"
+      description: "Get comprehensive stats on views, likes, comments, and engagement rates",
+      image: statsDashboard,
+      alt: "Viral Vault Stats Dashboard showing selection stats for 36 reels including total views of 263M, average views of 7.3M, total likes, comments, and engagement rates"
     },
     {
       icon: <Download className="w-6 h-6" />,
       title: "Export to CSV",
-      description: "Download your selection data for deeper analysis and reporting"
+      description: "Download your selection data for deeper analysis and reporting",
+      image: null, // Will be added when screenshot is uploaded
+      alt: "CSV export feature interface"
     }
   ];
 
@@ -32,27 +38,42 @@ const Features = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
+        <div className="space-y-16 sm:space-y-24">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="p-6 rounded-lg border-2 border-border bg-card hover:border-primary transition-all duration-200"
+              className={`flex flex-col ${
+                index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+              } gap-8 lg:gap-12 items-center`}
             >
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 text-primary">
-                {feature.icon}
+              <div className="flex-1 space-y-4">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                  {feature.icon}
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-card-foreground">
+                  {feature.title}
+                </h3>
+                <p className="text-base sm:text-lg text-muted-foreground">
+                  {feature.description}
+                </p>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-card-foreground">{feature.title}</h3>
-              <p className="text-muted-foreground">{feature.description}</p>
+              <div className="flex-1 w-full">
+                {feature.image ? (
+                  <div className="rounded-xl overflow-hidden border-2 border-border shadow-xl">
+                    <img
+                      src={feature.image}
+                      alt={feature.alt}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                ) : (
+                  <div className="rounded-xl border-2 border-dashed border-border bg-muted/30 aspect-video flex items-center justify-center">
+                    <p className="text-muted-foreground text-sm">Screenshot coming soon</p>
+                  </div>
+                )}
+              </div>
             </div>
           ))}
-        </div>
-
-        <div className="rounded-xl overflow-hidden border-2 border-border shadow-2xl">
-          <img
-            src={statsDashboard}
-            alt="Viral Vault Stats Dashboard showing selection stats for 36 reels including total views of 263M, average views of 7.3M, total likes, comments, and engagement rates"
-            className="w-full h-auto"
-          />
         </div>
       </div>
     </section>
