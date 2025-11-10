@@ -1,5 +1,6 @@
 import { Download, UserCircle, TrendingUp } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const steps = [
   {
@@ -23,9 +24,16 @@ const steps = [
 ];
 
 const HowItWorks = () => {
+  const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation();
+  
   return (
     <section className="py-12 md:py-24 px-4 bg-card">
-      <div className="container max-w-6xl">
+      <div 
+        ref={sectionRef}
+        className={`container max-w-6xl transition-all duration-700 ${
+          sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
         <div className="text-center mb-8 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-3 md:mb-4">
             How Viral Vault Works

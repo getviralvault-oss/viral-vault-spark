@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const faqs = [
   {
@@ -39,9 +40,16 @@ const faqs = [
 ];
 
 const FAQ = () => {
+  const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation();
+  
   return (
     <section className="py-12 md:py-24 px-4">
-      <div className="container max-w-3xl">
+      <div 
+        ref={sectionRef}
+        className={`container max-w-3xl transition-all duration-700 ${
+          sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-3 md:mb-4">
             Frequently Asked Questions

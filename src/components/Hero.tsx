@@ -1,13 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { Chrome } from "lucide-react";
 import logo from "@/assets/logo.svg";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const CHECKOUT_URL = "https://getviralvault.lemonsqueezy.com/checkout/buy/f712138b-c5c4-4af0-8118-09695cac1655";
 
 const Hero = () => {
+  const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation({ threshold: 0.2 });
+  
   return (
     <section className="min-h-[90vh] flex items-center justify-center px-4 py-12 md:py-20">
-      <div className="container max-w-6xl">
+      <div 
+        ref={heroRef}
+        className={`container max-w-6xl transition-all duration-1000 ${
+          heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
         <div className="flex flex-col items-center text-center space-y-6 md:space-y-8">
           <div className="flex items-center gap-3 md:gap-4 mb-2 md:mb-4">
             <img src={logo} alt="Viral Vault Logo" className="w-12 h-12 md:w-16 md:h-16" />

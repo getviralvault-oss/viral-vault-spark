@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Check, Zap } from "lucide-react";
 import TrustBadges from "./TrustBadges";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const CHECKOUT_URL = "https://getviralvault.lemonsqueezy.com/checkout/buy/f712138b-c5c4-4af0-8118-09695cac1655";
 
@@ -16,9 +17,16 @@ const features = [
 ];
 
 const Pricing = () => {
+  const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation();
+  
   return (
     <section className="py-12 md:py-24 px-4 bg-card">
-      <div className="container max-w-4xl">
+      <div 
+        ref={sectionRef}
+        className={`container max-w-4xl transition-all duration-700 ${
+          sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-3 md:mb-4">
             Simple, One-Time Pricing

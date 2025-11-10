@@ -1,13 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import TrustBadges from "./TrustBadges";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const CHECKOUT_URL = "https://getviralvault.lemonsqueezy.com/checkout/buy/f712138b-c5c4-4af0-8118-09695cac1655";
 
 const FinalCTA = () => {
+  const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation();
+  
   return (
     <section className="py-12 md:py-24 px-4">
-      <div className="container max-w-4xl">
+      <div 
+        ref={sectionRef}
+        className={`container max-w-4xl transition-all duration-700 ${
+          sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
         <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/10 via-primary/5 to-transparent border-2 border-primary/20 p-8 md:p-12 lg:p-16">
           <div className="absolute top-0 right-0 w-48 h-48 md:w-64 md:h-64 bg-primary/10 rounded-full blur-3xl -mr-24 md:-mr-32 -mt-24 md:-mt-32" />
           <div className="absolute bottom-0 left-0 w-48 h-48 md:w-64 md:h-64 bg-primary/10 rounded-full blur-3xl -ml-24 md:-ml-32 -mb-24 md:-mb-32" />

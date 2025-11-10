@@ -2,8 +2,10 @@ import { BarChart3, Download, Filter } from "lucide-react";
 import smartSorting from "@/assets/smart-sorting.png";
 import detailedAnalytics from "@/assets/detailed-analytics.png";
 import exportToCsv from "@/assets/export-to-csv.png";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Features = () => {
+  const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation();
   const features = [
     {
       icon: <Filter className="w-6 h-6" />,
@@ -30,7 +32,12 @@ const Features = () => {
 
   return (
     <section className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 bg-background">
-      <div className="container mx-auto max-w-7xl">
+      <div 
+        ref={sectionRef}
+        className={`container mx-auto max-w-7xl transition-all duration-700 ${
+          sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
         <div className="text-center mb-12 sm:mb-16 md:mb-24">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-foreground">
             Powerful Features for Content Creators
