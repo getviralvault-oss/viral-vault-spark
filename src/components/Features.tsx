@@ -31,7 +31,7 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 bg-background">
+    <section id="features" className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 bg-background">
       <div 
         ref={sectionRef}
         className={`container mx-auto max-w-7xl transition-all duration-700 ${

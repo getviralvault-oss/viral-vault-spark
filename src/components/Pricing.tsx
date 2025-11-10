@@ -20,7 +20,7 @@ const Pricing = () => {
   const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation();
   
   return (
-    <section className="py-12 md:py-24 px-4 bg-card">
+    <section id="pricing" className="py-12 md:py-24 px-4 bg-card">
       <div 
         ref={sectionRef}
         className={`container max-w-4xl transition-all duration-700 ${
