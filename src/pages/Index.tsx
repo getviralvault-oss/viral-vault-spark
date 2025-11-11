@@ -7,6 +7,7 @@ import FAQ from "@/components/FAQ";
 import Pricing from "@/components/Pricing";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => {
   return (
@@ -20,6 +21,7 @@ const Index = () => {
       <Pricing />
       <FinalCTA />
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };
