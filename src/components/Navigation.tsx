@@ -2,12 +2,10 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Chrome, Menu, X } from "lucide-react";
 import logo from "@/assets/logo.svg";
-import { useTranslation } from "react-i18next";
 
 const CHECKOUT_URL = "https://getviralvault.lemonsqueezy.com/checkout/buy/f712138b-c5c4-4af0-8118-09695cac1655";
 
 const Navigation = () => {
-  const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -29,11 +27,11 @@ const Navigation = () => {
   };
 
   const navItems = [
-    { labelKey: "navigation.features", id: "features" },
-    { labelKey: "navigation.howItWorks", id: "how-it-works" },
-    { labelKey: "navigation.demo", id: "video-demo" },
-    { labelKey: "navigation.faq", id: "faq" },
-    { labelKey: "navigation.pricing", id: "pricing" },
+    { label: "Features", id: "features" },
+    { label: "How It Works", id: "how-it-works" },
+    { label: "Demo", id: "video-demo" },
+    { label: "FAQ", id: "faq" },
+    { label: "Pricing", id: "pricing" },
   ];
 
   return (
@@ -53,7 +51,7 @@ const Navigation = () => {
               className="flex items-center gap-2 md:gap-3 hover:opacity-80 transition-opacity"
             >
               <img src={logo} alt="Viral Vault" className="w-8 h-8 md:w-10 md:h-10" />
-              <span className="font-bold text-base md:text-lg">{t('hero.title')}</span>
+              <span className="font-bold text-base md:text-lg">Viral Vault</span>
             </button>
 
             {/* Desktop Navigation */}
@@ -64,7 +62,7 @@ const Navigation = () => {
                   onClick={() => scrollToSection(item.id)}
                   className="px-3 lg:px-4 py-2 text-sm lg:text-base text-muted-foreground hover:text-foreground transition-colors font-medium"
                 >
-                  {t(item.labelKey)}
+                  {item.label}
                 </button>
               ))}
             </div>
@@ -76,8 +74,8 @@ const Navigation = () => {
               onClick={() => window.open(CHECKOUT_URL, "_blank")}
             >
               <Chrome className="w-4 h-4" />
-              <span className="hidden lg:inline">{t('navigation.getVault')}</span>
-              <span className="lg:hidden">{t('navigation.getNow')}</span>
+              <span className="hidden lg:inline">Get Viral Vault</span>
+              <span className="lg:hidden">Get Now</span>
             </Button>
 
             {/* Mobile Menu Button */}
@@ -108,7 +106,7 @@ const Navigation = () => {
                 onClick={() => scrollToSection(item.id)}
                 className="block w-full text-left px-4 py-3 text-base hover:bg-muted rounded-lg transition-colors"
               >
-                {t(item.labelKey)}
+                {item.label}
               </button>
             ))}
             <Button
@@ -119,7 +117,7 @@ const Navigation = () => {
               }}
             >
               <Chrome className="w-4 h-4 mr-2" />
-              {t('hero.ctaPrimary')}
+              Get Viral Vault Now
             </Button>
           </div>
         </div>
