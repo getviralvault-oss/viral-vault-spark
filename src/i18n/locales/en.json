@@ -1,0 +1,139 @@
+{
+  "hero": {
+    "title": "Viral Vault",
+    "headline": "Find Viral Content",
+    "headlineHighlight": "In Seconds",
+    "description": "Sort any public Instagram profile by likes, views, or comments. Discover viral content to recreate and inspire your strategy.",
+    "ctaPrimary": "Get Viral Vault Now",
+    "ctaSecondary": "Watch Demo",
+    "pricing": "One-time payment • $47 • Lifetime access"
+  },
+  "features": {
+    "title": "Powerful Features for Content Creators",
+    "subtitle": "Everything you need to analyze and organize your viral content in one place",
+    "smartSorting": {
+      "title": "Smart Sorting",
+      "description": "Sort through thousands of reels instantly to find your best performers",
+      "alt": "Instagram reels grid showing viral content sorted by view count"
+    },
+    "analytics": {
+      "title": "Detailed Analytics",
+      "description": "Get comprehensive stats on views, likes, comments, and engagement rates",
+      "alt": "Viral Vault Stats Dashboard showing selection stats for 204 reels including total views, average views, total likes, comments, and engagement rates"
+    },
+    "export": {
+      "title": "Export to CSV",
+      "description": "Download your selection data for deeper analysis and reporting",
+      "alt": "Excel spreadsheet showing exported reel data with views, likes, comments, and engagement metrics"
+    }
+  },
+  "howItWorks": {
+    "title": "How Viral Vault Works",
+    "subtitle": "Simple setup, powerful insights in just 3 steps",
+    "step1": {
+      "title": "Install Extension",
+      "description": "Add Viral Vault to Chrome with one click"
+    },
+    "step2": {
+      "title": "Visit a Public Profile",
+      "description": "Go to any public Instagram profile"
+    },
+    "step3": {
+      "title": "Sort & Export",
+      "description": "Filter Reels by metrics and export data"
+    }
+  },
+  "videoDemo": {
+    "title": "See It In Action",
+    "subtitle": "Watch how Viral Vault helps you discover viral content",
+    "videoTitle": "Viral Vault Demo"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about Viral Vault",
+    "questions": {
+      "howItWorks": {
+        "question": "How does Viral Vault work?",
+        "answer": "Viral Vault is a Chrome extension that adds analytics capabilities to Instagram. Once installed, when you visit any public Instagram profile, it analyzes their Reels and provides sorting options by views, likes, or comments directly on the profile page."
+      },
+      "dataExport": {
+        "question": "What data can I export?",
+        "answer": "You can export views, likes, shares, comments, engagement rate, and post date in CSV format. This allows for deeper analysis in tools like Google Sheets or Excel."
+      },
+      "terms": {
+        "question": "Is this against Instagram's terms?",
+        "answer": "Viral Vault only accesses publicly available data and doesn't require login credentials. We operate within platform guidelines while providing valuable analytics."
+      },
+      "lifetime": {
+        "question": "How does the lifetime access offer work?",
+        "answer": "The first 500 users get permanent access to Viral Vault for a one-time payment of $47. This includes all future updates and features. After the first 500, we'll switch to a subscription model."
+      },
+      "updates": {
+        "question": "How often is the data updated?",
+        "answer": "Viral Vault provides real-time data whenever you visit a profile. The engagement metrics you see are the same as what's publicly visible on Instagram at that moment. For historical data, you can export and save your reports."
+      },
+      "mobile": {
+        "question": "Is there a mobile version?",
+        "answer": "Currently, Viral Vault is available as a Chrome extension for desktop browsers. We're working on mobile solutions and plan to release mobile-compatible versions in the future. For now, we recommend using it on your computer for the best experience."
+      }
+    }
+  },
+  "pricing": {
+    "title": "Simple, One-Time Pricing",
+    "subtitle": "Pay once, use forever. No subscriptions.",
+    "badge": "LIFETIME DEAL",
+    "price": "$47",
+    "priceDetails": "One-time payment • No hidden fees • Cancel anytime",
+    "features": {
+      "sorting": "Unlimited profile sorting",
+      "sortOptions": "Sort by likes, views, and comments",
+      "export": "Export data to CSV",
+      "profiles": "Works with any public profile",
+      "performance": "Fast and reliable",
+      "updates": "Lifetime updates",
+      "support": "Priority support"
+    },
+    "cta": "Get Viral Vault Now"
+  },
+  "finalCta": {
+    "badge": "Limited Time Offer",
+    "title": "Ready to Find Your Next",
+    "titleHighlight": "Viral Content?",
+    "description": "Join 500+ creators who are already discovering viral content with Viral Vault. Get lifetime access for just $47 before we switch to subscriptions.",
+    "cta": "Get Lifetime Access Now"
+  },
+  "footer": {
+    "tagline": "Save hours finding viral TikTok content",
+    "contact": "contact@getviralvault.com",
+    "quickLinks": {
+      "title": "Quick Links",
+      "features": "Features",
+      "howItWorks": "How It Works",
+      "demo": "Demo",
+      "faq": "FAQ",
+      "pricing": "Pricing"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "refund": "Refund Policy"
+    },
+    "support": {
+      "title": "Support",
+      "securePayment": "Secure Payment",
+      "guarantee": "Money-Back Guarantee",
+      "users": "500+ Happy Users"
+    },
+    "copyright": "© 2025 Viral Vault. All rights reserved."
+  },
+  "navigation": {
+    "features": "Features",
+    "howItWorks": "How It Works",
+    "demo": "Demo",
+    "faq": "FAQ",
+    "pricing": "Pricing",
+    "getVault": "Get Viral Vault",
+    "getNow": "Get Now"
+  }
+}

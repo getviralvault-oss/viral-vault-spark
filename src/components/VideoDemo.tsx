@@ -1,7 +1,9 @@
 import { Card } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useTranslation } from "react-i18next";
 
 const VideoDemo = () => {
+  const { t } = useTranslation();
   const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation();
   
   return (
@@ -14,10 +16,10 @@ const VideoDemo = () => {
       >
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-3 md:mb-4">
-            See It In Action
+            {t('videoDemo.title')}
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground px-4">
-            Watch how Viral Vault helps you discover viral content
+            {t('videoDemo.subtitle')}
           </p>
         </div>
         
@@ -26,7 +28,7 @@ const VideoDemo = () => {
             <iframe
               className="w-full h-full"
               src="https://www.youtube.com/embed/W7Ceq6_qY6U"
-              title="Viral Vault Demo"
+              title={t('videoDemo.videoTitle')}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
