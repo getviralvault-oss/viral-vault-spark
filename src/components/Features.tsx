@@ -3,30 +3,32 @@ import smartSorting from "@/assets/smart-sorting.png";
 import detailedAnalytics from "@/assets/detailed-analytics.png";
 import exportToCsv from "@/assets/export-to-csv.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useTranslation } from "react-i18next";
 
 const Features = () => {
+  const { t } = useTranslation();
   const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation();
   const features = [
     {
       icon: <Filter className="w-6 h-6" />,
-      title: "Smart Sorting",
-      description: "Sort through thousands of reels instantly to find your best performers",
+      titleKey: "features.smartSorting.title",
+      descriptionKey: "features.smartSorting.description",
       image: smartSorting,
-      alt: "Instagram reels grid showing viral content sorted by view count"
+      altKey: "features.smartSorting.alt"
     },
     {
       icon: <BarChart3 className="w-6 h-6" />,
-      title: "Detailed Analytics",
-      description: "Get comprehensive stats on views, likes, comments, and engagement rates",
+      titleKey: "features.analytics.title",
+      descriptionKey: "features.analytics.description",
       image: detailedAnalytics,
-      alt: "Viral Vault Stats Dashboard showing selection stats for 204 reels including total views, average views, total likes, comments, and engagement rates"
+      altKey: "features.analytics.alt"
     },
     {
       icon: <Download className="w-6 h-6" />,
-      title: "Export to CSV",
-      description: "Download your selection data for deeper analysis and reporting",
+      titleKey: "features.export.title",
+      descriptionKey: "features.export.description",
       image: exportToCsv,
-      alt: "Excel spreadsheet showing exported reel data with views, likes, comments, and engagement metrics"
+      altKey: "features.export.alt"
     }
   ];
 
@@ -40,10 +42,10 @@ const Features = () => {
       >
         <div className="text-center mb-12 sm:mb-16 md:mb-24">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-foreground">
-            Powerful Features for Content Creators
+            {t('features.title')}
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Everything you need to analyze and organize your viral content in one place
+            {t('features.subtitle')}
           </p>
         </div>
 
@@ -60,17 +62,17 @@ const Features = () => {
                   {feature.icon}
                 </div>
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
-                  {feature.title}
+                  {t(feature.titleKey)}
                 </h3>
                 <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
-                  {feature.description}
+                  {t(feature.descriptionKey)}
                 </p>
               </div>
               <div className="flex-1 w-full">
                 <div className="rounded-2xl overflow-hidden border border-border/50 shadow-2xl hover:shadow-3xl transition-shadow duration-300 bg-card">
                   <img
                     src={feature.image}
-                    alt={feature.alt}
+                    alt={t(feature.altKey)}
                     className="w-full h-auto"
                     loading="lazy"
                   />

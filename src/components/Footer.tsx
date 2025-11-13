@@ -1,8 +1,11 @@
 import logo from "@/assets/logo.svg";
 import { Mail, Shield, Lock, Users } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
+  
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -11,23 +14,23 @@ const Footer = () => {
   };
 
   const quickLinks = [
-    { label: "Features", id: "features" },
-    { label: "How It Works", id: "how-it-works" },
-    { label: "Demo", id: "video-demo" },
-    { label: "FAQ", id: "faq" },
-    { label: "Pricing", id: "pricing" },
+    { labelKey: "footer.quickLinks.features", id: "features" },
+    { labelKey: "footer.quickLinks.howItWorks", id: "how-it-works" },
+    { labelKey: "footer.quickLinks.demo", id: "video-demo" },
+    { labelKey: "footer.quickLinks.faq", id: "faq" },
+    { labelKey: "footer.quickLinks.pricing", id: "pricing" },
   ];
 
   const legalLinks = [
-    { label: "Privacy Policy", href: "/privacy" },
-    { label: "Terms of Service", href: "/terms" },
-    { label: "Refund Policy", href: "/refund" },
+    { labelKey: "footer.legal.privacy", href: "/privacy" },
+    { labelKey: "footer.legal.terms", href: "/terms" },
+    { labelKey: "footer.legal.refund", href: "/refund" },
   ];
 
   const trustItems = [
-    { icon: Shield, text: "Secure Payment" },
-    { icon: Lock, text: "Money-Back Guarantee" },
-    { icon: Users, text: "500+ Happy Users" },
+    { icon: Shield, textKey: "footer.support.securePayment" },
+    { icon: Lock, textKey: "footer.support.guarantee" },
+    { icon: Users, textKey: "footer.support.users" },
   ];
 
   return (
@@ -39,23 +42,23 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-2.5">
               <img src={logo} alt="Viral Vault" className="w-8 h-8" />
-              <span className="font-bold text-lg">Viral Vault</span>
+              <span className="font-bold text-lg">{t('hero.title')}</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              Save hours finding viral TikTok content
+              {t('footer.tagline')}
             </p>
             <a
-              href="mailto:contact@getviralvault.com"
+              href={`mailto:${t('footer.contact')}`}
               className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
             >
               <Mail className="w-4 h-4 text-primary group-hover:scale-110 transition-transform" />
-              <span>contact@getviralvault.com</span>
+              <span>{t('footer.contact')}</span>
             </a>
           </div>
 
           {/* Column 2: Quick Links */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-sm text-foreground">Quick Links</h3>
+            <h3 className="font-semibold text-sm text-foreground">{t('footer.quickLinks.title')}</h3>
             <nav className="flex flex-col gap-2">
               {quickLinks.map((link) => (
                 <button
@@ -63,7 +66,7 @@ const Footer = () => {
                   onClick={() => scrollToSection(link.id)}
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left w-fit"
                 >
-                  {link.label}
+                  {t(link.labelKey)}
                 </button>
               ))}
             </nav>
@@ -71,7 +74,7 @@ const Footer = () => {
 
           {/* Column 3: Legal */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-sm text-foreground">Legal</h3>
+            <h3 className="font-semibold text-sm text-foreground">{t('footer.legal.title')}</h3>
             <nav className="flex flex-col gap-2">
               {legalLinks.map((link) => (
                 <a
@@ -79,7 +82,7 @@ const Footer = () => {
                   href={link.href}
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors w-fit"
                 >
-                  {link.label}
+                  {t(link.labelKey)}
                 </a>
               ))}
             </nav>
@@ -87,7 +90,7 @@ const Footer = () => {
 
           {/* Column 4: Trust & Support */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-sm text-foreground">Support</h3>
+            <h3 className="font-semibold text-sm text-foreground">{t('footer.support.title')}</h3>
             <div className="flex flex-col gap-3">
               {trustItems.map((item, index) => {
                 const Icon = item.icon;
@@ -99,7 +102,7 @@ const Footer = () => {
                     <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <Icon className="w-3.5 h-3.5 text-primary" />
                     </div>
-                    <span>{item.text}</span>
+                    <span>{t(item.textKey)}</span>
                   </div>
                 );
               })}
@@ -112,7 +115,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="text-center">
           <p className="text-sm text-muted-foreground">
-            © 2025 Viral Vault. All rights reserved.
+            {t('footer.copyright')}
           </p>
         </div>
       </div>

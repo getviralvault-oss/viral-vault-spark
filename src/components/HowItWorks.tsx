@@ -1,30 +1,32 @@
 import { Download, UserCircle, TrendingUp } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-
-const steps = [
-  {
-    icon: Download,
-    title: "Install Extension",
-    description: "Add Viral Vault to Chrome with one click",
-    number: "1",
-  },
-  {
-    icon: UserCircle,
-    title: "Visit a Public Profile",
-    description: "Go to any public Instagram profile",
-    number: "2",
-  },
-  {
-    icon: TrendingUp,
-    title: "Sort & Export",
-    description: "Filter Reels by metrics and export data",
-    number: "3",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const HowItWorks = () => {
+  const { t } = useTranslation();
   const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation();
+  
+  const steps = [
+    {
+      icon: Download,
+      titleKey: "howItWorks.step1.title",
+      descriptionKey: "howItWorks.step1.description",
+      number: "1",
+    },
+    {
+      icon: UserCircle,
+      titleKey: "howItWorks.step2.title",
+      descriptionKey: "howItWorks.step2.description",
+      number: "2",
+    },
+    {
+      icon: TrendingUp,
+      titleKey: "howItWorks.step3.title",
+      descriptionKey: "howItWorks.step3.description",
+      number: "3",
+    },
+  ];
   
   return (
     <section id="how-it-works" className="py-12 md:py-24 px-4 bg-card">
@@ -36,10 +38,10 @@ const HowItWorks = () => {
       >
         <div className="text-center mb-8 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-3 md:mb-4">
-            How Viral Vault Works
+            {t('howItWorks.title')}
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground px-4">
-            Simple setup, powerful insights in just 3 steps
+            {t('howItWorks.subtitle')}
           </p>
         </div>
         
@@ -61,9 +63,9 @@ const HowItWorks = () => {
                   </div>
                 </div>
                 
-                <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3">{step.title}</h3>
+                <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3">{t(step.titleKey)}</h3>
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                  {step.description}
+                  {t(step.descriptionKey)}
                 </p>
               </Card>
             );
